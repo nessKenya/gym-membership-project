@@ -1,6 +1,6 @@
-@prod_domain = https://members-project-3h21.onrender.com
+@prod_domain = https://gym-membership-project.onrender.com
   @dev_domain = http://localhost:3000
-  @contactId = 67d556af1b2495a457a44ac8
+  @memberId = 67d556af1b2495a457a44ac8
   
 ### Get all members
 GET {{dev_domain}}/members
@@ -8,9 +8,9 @@ GET {{dev_domain}}/members
 GET {{prod_domain}}/members
 
 ### Get specific contact by id
-GET {{dev_domain}}/members/{{contactId}}
+GET {{dev_domain}}/members/{{memberId}}
 ###
-GET {{prod_domain}}/members/{{contactId}}
+GET {{prod_domain}}/members/{{memberId}}
 ### Create new contact
 POST {{dev_domain}}/members
 content-type: application/json
@@ -29,16 +29,16 @@ POST {{prod_domain}}/members
 content-type: application/json
 
 {
-  "firstName": "any",
-  "lastName": "any",
-  "weight": "any",
-  "phone": "any",
-  "address": "any",
-  "favoriteWorkout": "any",
-  "birthday": "any"
+  "firstName": "Kevo",
+  "lastName": "Superstar",
+  "weight": "67",
+  "phone": "0737-000-400",
+  "address": "Karen",
+  "favoriteWorkout": "Biceps",
+  "birthday": "17-12-199"
 }
 ### Update member
-PUT {{dev_domain}}/members/{{contactId}}
+PUT {{dev_domain}}/members/{{memberId}}
 content-type: application/json
 
 {
@@ -51,7 +51,7 @@ content-type: application/json
   "birthday": "any"
 }
 ###
-PUT {{prod_domain}}/members/{{contactId}}
+PUT {{prod_domain}}/members/{{memberId}}
 content-type: application/json
 
 {
@@ -64,6 +64,6 @@ content-type: application/json
   "birthday": "any"
 }
 ### Delete contact
-DELETE {{dev_domain}}/members/{{contactId}}
+DELETE {{dev_domain}}/members/{{memberId}}
 ###
-DELETE {{prod_domain}}/members/{{contactId}}
+DELETE {{prod_domain}}/members/{{memberId}}

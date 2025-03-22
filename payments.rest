@@ -1,6 +1,6 @@
-@prod_domain = https://payments-project-3h21.onrender.com
+@prod_domain = https://gym-membership-project.onrender.com
   @dev_domain = http://localhost:3000
-  @contactId = 67d556af1b2495a457a44ac8
+  @paymentId = 67d556af1b2495a457a44ac8
   
 ### Get all payments
 GET {{dev_domain}}/payments
@@ -8,9 +8,9 @@ GET {{dev_domain}}/payments
 GET {{prod_domain}}/payments
 
 ### Get specific contact by id
-GET {{dev_domain}}/payments/{{contactId}}
+GET {{dev_domain}}/payments/{{paymentId}}
 ###
-GET {{prod_domain}}/payments/{{contactId}}
+GET {{prod_domain}}/payments/{{paymentId}}
 ### Create new contact
 POST {{dev_domain}}/payments
 content-type: application/json
@@ -32,7 +32,7 @@ content-type: application/json
   "member_id": "67df37a8993ee1350e3e6206"
 }
 ### Update payment
-PUT {{dev_domain}}/payments/{{contactId}}
+PUT {{dev_domain}}/payments/{{paymentId}}
 content-type: application/json
 
 {
@@ -42,7 +42,7 @@ content-type: application/json
   "member_id": "member id"
 }
 ###
-PUT {{prod_domain}}/payments/{{contactId}}
+PUT {{prod_domain}}/payments/{{paymentId}}
 content-type: application/json
 
 {
@@ -52,6 +52,6 @@ content-type: application/json
   "member_id": "member id"
 }
 ### Delete payment
-DELETE {{dev_domain}}/payments/{{contactId}}
+DELETE {{dev_domain}}/payments/{{paymentId}}
 ###
-DELETE {{prod_domain}}/payments/{{contactId}}
+DELETE {{prod_domain}}/payments/{{paymentId}}
