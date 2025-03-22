@@ -1,0 +1,69 @@
+@prod_domain = https://members-project-3h21.onrender.com
+  @dev_domain = http://localhost:3000
+  @contactId = 67d556af1b2495a457a44ac8
+  
+### Get all members
+GET {{dev_domain}}/members
+###
+GET {{prod_domain}}/members
+
+### Get specific contact by id
+GET {{dev_domain}}/members/{{contactId}}
+###
+GET {{prod_domain}}/members/{{contactId}}
+### Create new contact
+POST {{dev_domain}}/members
+content-type: application/json
+
+{
+  "firstName": "any",
+  "lastName": "any",
+  "weight": "any",
+  "phone": "any",
+  "address": "any",
+  "favoriteWorkout": "any",
+  "birthday": "any"
+}
+###
+POST {{prod_domain}}/members
+content-type: application/json
+
+{
+  "firstName": "any",
+  "lastName": "any",
+  "weight": "any",
+  "phone": "any",
+  "address": "any",
+  "favoriteWorkout": "any",
+  "birthday": "any"
+}
+### Update member
+PUT {{dev_domain}}/members/{{contactId}}
+content-type: application/json
+
+{
+  "firstName": "any",
+  "lastName": "any",
+  "weight": "any",
+  "phone": "any",
+  "address": "any",
+  "favoriteWorkout": "any",
+  "birthday": "any"
+}
+###
+PUT {{prod_domain}}/members/{{contactId}}
+content-type: application/json
+
+{
+  "firstName": "any",
+  "lastName": "any",
+  "weight": "any",
+  "phone": "any",
+  "address": "any",
+  "favoriteWorkout": "any",
+  "birthday": "any"
+}
+### Delete contact
+DELETE {{dev_domain}}/members/{{contactId}}
+###
+DELETE {{prod_domain}}/members/{{contactId}}

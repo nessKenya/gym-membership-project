@@ -1,0 +1,57 @@
+@prod_domain = https://payments-project-3h21.onrender.com
+  @dev_domain = http://localhost:3000
+  @contactId = 67d556af1b2495a457a44ac8
+  
+### Get all payments
+GET {{dev_domain}}/payments
+###
+GET {{prod_domain}}/payments
+
+### Get specific contact by id
+GET {{dev_domain}}/payments/{{contactId}}
+###
+GET {{prod_domain}}/payments/{{contactId}}
+### Create new contact
+POST {{dev_domain}}/payments
+content-type: application/json
+
+{
+  "amount": "any",
+  "status": "any",
+  "mode": "any",
+  "member_id": "member id"
+}
+###
+POST {{prod_domain}}/payments
+content-type: application/json
+
+{
+  "amount": "any",
+  "status": "any",
+  "mode": "any",
+  "member_id": "67df37a8993ee1350e3e6206"
+}
+### Update payment
+PUT {{dev_domain}}/payments/{{contactId}}
+content-type: application/json
+
+{
+  "amount": "any",
+  "status": "any",
+  "mode": "any",
+  "member_id": "member id"
+}
+###
+PUT {{prod_domain}}/payments/{{contactId}}
+content-type: application/json
+
+{
+  "amount": "any",
+  "status": "any",
+  "mode": "any",
+  "member_id": "member id"
+}
+### Delete payment
+DELETE {{dev_domain}}/payments/{{contactId}}
+###
+DELETE {{prod_domain}}/payments/{{contactId}}

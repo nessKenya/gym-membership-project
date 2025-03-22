@@ -1,0 +1,30 @@
+{
+  "name": "gym-membership-project",
+  "version": "1.0.0",
+  "description": "simple gym memberhip project",
+  "main": "server.js",
+  "scripts": {
+    "swagger": "node ./swagger.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nessKenya/gym-membership-project.git"
+  },
+  "author": "nelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nessKenya/gym-membership-project/issues"
+  },
+  "homepage": "https://github.com/nessKenya/gym-membership-project#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "mongodb": "^6.15.0",
+    "swagger-ui-express": "^5.0.1",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.23.7"
+  }
+}
