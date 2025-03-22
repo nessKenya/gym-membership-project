@@ -6,7 +6,7 @@ const doc = {
     title: 'Gym Membership API',
     description: 'Description'
   },
-  host: isProduction?"gym-membership-project-3h21.onrender.com":"localhost:3000",
+  host: isProduction?"https://gym-membership-project.onrender.com":"localhost:3000",
   schemes: isProduction ? ['https'] : ['http'],
 };
 
