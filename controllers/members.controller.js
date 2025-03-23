@@ -51,7 +51,7 @@ const deleteMember = async (req, res) => {
   const memberId = {_id: new ObjectId(req.params.id)};
   const result = await mongodb.getDatabase().db().collection('members').deleteOne(memberId);
   if (result.deletedCount === 1) {
-    return res.status(204);
+    return res.status(204).send();
   } else {
     return res.status(404).json({error: result.error ||"Document not found."});
   }
