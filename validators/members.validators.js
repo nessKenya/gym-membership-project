@@ -14,7 +14,7 @@ const validateMember = async (req, res, next) => {
   await validator(req.body, validationRule, {}, (err, status) => {
       if (!status) {
           res
-          .status(412)
+          .status(400)
           .json({
                   success: false,
                   message: 'Validation failed',
@@ -40,7 +40,7 @@ const updateMember = async (req, res, next) => {
   await validator(req.body, validationRule, {}, async (err, status) => {
       if (!status) {
           res
-          .status(412)
+          .status(400)
           .json({
                   success: false,
                   message: 'Validation failed',
