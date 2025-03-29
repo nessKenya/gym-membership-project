@@ -15,6 +15,9 @@ app.use(require('express-session')({ secret: SESSION_SECRET, resave: true, saveU
 app.use(passport.initialize());
 app.use(passport.session());
 
+const excludedPaths = ["/", "/login", "/auth/google/callback", "/logout"];
+excludedPaths.forEach(path => delete swaggerDocument.paths[path]);
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument)); 
 
 app.use(cors())
