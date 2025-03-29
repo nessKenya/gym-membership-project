@@ -1,7 +1,8 @@
 const express = require('express');
 
 const memberController = require('../controllers/members.controller');
-const memberValidators = require('../validators/members.validators')
+const memberValidators = require('../validators/members.validators');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 
 const router = express.Router();
@@ -13,12 +14,12 @@ router.get('/', memberController.getAllMembers);
 router.get('/:id', memberController.getMember);
 
 // create
-router.post('/', memberValidators.validateMember, memberController.createMember);
+router.post('/', isAuthenticated, memberValidators.validateMember, memberController.createMember);
 
 // update
-router.put('/:id', memberValidators.updateMember,memberController.updateMember);
+router.put('/:id', isAuthenticated, memberValidators.updateMember,memberController.updateMember);
 
 // delete
-router.delete('/:id', memberController.deleteMember);
+router.delete('/:id', isAuthenticated, memberController.deleteMember);
 
 module.exports = router;

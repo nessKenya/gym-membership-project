@@ -1,7 +1,9 @@
 const express = require('express');
 
 const paymentController = require('../controllers/payments.controller');
-const paymentValidators = require('../validators/payments.validators')
+const paymentValidators = require('../validators/payments.validators');
+const { isAuthenticated } = require('../middleware/authenticate');
+
 
 
 const router = express.Router();
@@ -13,12 +15,12 @@ router.get('/', paymentController.getAllPayments);
 router.get('/:id', paymentController.getPayment);
 
 // create
-router.post('/', paymentValidators.validatePayment, paymentController.createPayment);
+router.post('/', isAuthenticated, paymentValidators.validatePayment, paymentController.createPayment);
 
 // update
-router.put('/:id', paymentValidators.updatePayment, paymentController.updatePayment);
+router.put('/:id', isAuthenticated, paymentValidators.updatePayment, paymentController.updatePayment);
 
 // delete
-router.delete('/:id', paymentController.deletePayment);
+router.delete('/:id', isAuthenticated, paymentController.deletePayment);
 
 module.exports = router;
